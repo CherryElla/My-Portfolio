@@ -1,6 +1,5 @@
 body {
     background-color: #98817b;
-    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
     font-family: 'Righteous', cursive;
     margin: 0;
     display: flex;
@@ -8,14 +7,16 @@ body {
     min-height: 300vh;
 }
 
-em {
-    font-size: 50px;
-    font-style: normal;
-}
-
 img { 
     max-width: 100%;
     max-height: auto;
+} 
+
+em {
+    font-size: 40px;
+    font-style: normal;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
 }
 
 nav {
@@ -27,120 +28,155 @@ nav {
 }
 
 /* Navigation menu text */
-a {
+nav a {
     color: #4b3621;
     margin: 20px;
     text-decoration: none;
     font-size: 20px;
 }
 
-aside {
-    flex: none;
-    max-width: 200px;
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    z-index: 4;
-    position: relative;
-    color: aqua;
-    font-size: 70px;
-    letter-spacing: 10px;
-}
-
-section {
+/* Header element */
+header{
     display: flex;
-    position: absolute;
-
-}
-
-/* Section Element Photo */
-section.sect-left {
-    flex-grow: 1;
-    z-index: 3;
-    top: 0;
-    left: 0;
-    max-width: 600px;
-    max-height: auto;
-}
-
-img.my-photo {
     position: relative;
-    border-radius: 60%;
-
+    z-index: 2;
+    max-height: 300px;
+    opacity: 0.8;
 }
 
-/* Section Element Banner */
-section.banner {
-        flex-wrap: wrap;
-        z-index: 2;
-        top: 100px;
-        left: 0px;
-        min-width: 1663px;
-        min-height: auto;
-        background-color: rgb(0, 255, 255, 0.3);
-    
-}
-
-.box-1 {
-    flex: 2;
-    text-align:justify;
-    vertical-align: middle;
+/* The header elements text is centered */
+.header-text {
+    position: absolute;
+    padding-left: 550px;
+    padding-top: 5%;
     font-size: 50px;
     word-spacing: 2px;
     letter-spacing: 2px;
     color: #98817b;
-    text-shadow: 2px 1px 5px aqua;
-    border-width: 1px; 
-    padding: 40px;
-    margin-left: 600px; 
+    text-shadow: 2px 2px 5px aqua;
+
 }
 
-.box-2 {
-    flex: 1;
-    width: 300px;
-    height: auto;
+main {
+    display: flex;
+    flex-wrap: wrap;
 }
 
+aside {
+    display: flex;
+    position: absolute;
+    min-width: 200px;
+    min-height: 2000px;
+    z-index: 4;
+    top: 50px;
+    color: aqua;
+    font-size: 60px;
+    letter-spacing: 10px;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
 
+/* Section Element Photo */
+.portrait {
+    display: flex;
+    position: absolute;
+    flex-grow: 1;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    max-width: 400px;
+    max-height: auto;
+}
+
+img.my-photo {
+    flex-wrap: wrap;
+    border-radius: 60%;
+
+}
 
 /* Section Element About */
-@media (min-width:768px) {
-    section.about { 
-        top: 400px;
-        min-width: 1660px;
-        min-height: 300px;
-    }
+.about { 
+    display: flex;
+
+    /* position: absolute; */
+    top: 350px;
+    min-height: 300px;
 }
-.about div {
-    flex: 1;
-    flex-basis: 100%;
-    margin-left: 600px;
-    color: #4b3621;
+
+h2 {
+    flex: 0.25;
+    z-index: 5;
+    text-align: center;
+    padding-left: 250px;
+    color: #98817b;
+    text-shadow: 2px 2px 5px aqua;
+}
+
+#about-text {
+    flex: 2;
+    text-align: justify;
+    margin: 20px;
+    font-size: 20px;
+    font-style: normal;
+    color:black;
+    background-color: #98817b
 }
 
 /* Section Element Work */
-@media (min-width:768px) {
-    section.work {
-        border: 1px black solid;
-        justify-content: space-between;
-        left: 200px;
-        top: 700px;
-        max-width: 1660px;
-        min-height: 300px;
-    }
+.work {
+    display: flex;
+    /* position: absolute; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 300px;
+    top: 600px;
+    min-height: 300px;
 }
 
-.work div {
+h3 {
+    flex: 0.25;
+    z-index: 5;
+    text-align: center;
+    padding-right: 20px;
+    color: #98817b;
+    text-shadow: 2px 2px 5px aqua;
+
+}
+
+.large-img{
+    flex: 2 0 900px;
+    padding: 20px;
+    height: auto;
+}
+
+.work-img {
+    flex: 0 0 400px;
+    /* object-fit: scale-down; */
     padding: 10px;
-    flex-basis: 30%;
-    height: 15%;
-}
-#box-4 {
-    flex: 2;
+    height: auto;
 }
 
+@media (max-width:768px) {
+    /* main,
+    header,
+    nav, */
+    aside {
+        font-size: smaller;
+    }
+    .portrait {
+        max-width: 100px;
+    }
+    .about {
+        flex-direction: column;
+        padding: 40px;
+    }
 
+    em {
+        writing-mode: horizontal-tb;
+    }
 
-#box-5,#box-6,#box-7,#box-8 {
-    flex: 1;
-    object-fit: scale-down;
+    .work {
+        flex-direction: column;
+    }
+
 }
