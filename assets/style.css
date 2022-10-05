@@ -13,7 +13,7 @@ main {
     margin: 100px;
     display: flex;
     flex-direction: column;
-    min-height: 300vh;
+    /* min-height: 300vh; */
 }
 
 /* All images to fit their containers */
