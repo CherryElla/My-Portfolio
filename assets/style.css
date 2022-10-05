@@ -1,10 +1,11 @@
 
+/* Background image for the whole page */
 body {
     background: url(../assets/pexels-gdtography-911738.jpg) no-repeat center center fixed;
     background-size: cover;
-
 }
 
+/* Pages main body */
 main {
     background-color: white;
     border-radius: 50px;
@@ -15,11 +16,12 @@ main {
     min-height: 300vh;
 }
 
+/* All images to fit their containers */
 img { 
     max-width: 100%;
-    /* max-height: auto; */
 } 
 
+/* Main body about, work, contact titles */
 em {
     font-size: 40px;
     font-style: normal;
@@ -33,9 +35,7 @@ em {
 nav {
     display: flex;
     justify-content: flex-end;
-    /* background-color: #98817b; */
     height: 50px;
-
 }
 
 /* Navigation menu text */
@@ -56,30 +56,15 @@ header{
     margin-bottom: 100px;
 }
 
-aside {
-    display: flex;
-    position: absolute;
-    min-width: 200px;
-    min-height: 3000px;
-    z-index: 4;
-    top: 50px;
-    color: aqua;
-    font-size: 60px;
-    letter-spacing: 10px;
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    opacity: 0.5;
-
-}
-
+/* This is the main body, including about, work, contact */
 .main {
     display: inline-block;
     flex-wrap: wrap;
-    background-color: grey;
+    background-color: gray;
     
 }
 
-/* Section Element Photo */
+/* Photo section classes */
 .portrait {
     display: flex;
     position: absolute;
@@ -93,14 +78,12 @@ aside {
 
 .my-photo {
     border-radius: 60%;
-    
-
 }
 
-/* The header elements text is centered */
+/* The header text postioned central to the banner */
 .header-text {
     position: absolute;
-    top: 100px;
+    top: 90px;
     left: 300px;
     font-size: 50px;
     word-spacing: 2px;
@@ -110,14 +93,13 @@ aside {
 
 }
 
-/* Section Element About */
+/* About me section classes */
 .about { 
     display: flex;
-    min-height: 300px;
+    min-height: 300px; 
 }
 
 .about-contain {
-    /* flex: 0.5 .5 100%; */
     text-align: center;
     color: white;
     text-shadow: 2px 2px 5px aqua;
@@ -126,15 +108,18 @@ aside {
 #about-text {
     flex: 1 1 auto;
     text-align: center;
-    
     padding: 40px;
     font-size: 20px;
     font-style: normal;
     color:black;
+    border-radius: 50px;
+    box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
+    -webkit-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
+    -moz-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
     
 }
 
-/* Section Element Work */
+/* Work section classes */
 .work {
     display: flex;
     top: 600px;
@@ -146,11 +131,14 @@ aside {
     flex-wrap: wrap;
     justify-content: space-between;
     border: white;
-    
     border-radius: 50px;
     box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
--webkit-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
--moz-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
+    -webkit-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
+    -moz-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
+}
+
+.work-content img {
+    border-radius: 50px;
 }
 
 #work-imgs {
@@ -158,7 +146,6 @@ aside {
     flex-wrap: wrap;
     padding: 10px;
     height: auto;
-    border-radius: 50px;
 }
 .work-imgs {
     flex: 1 1 30%;
@@ -167,16 +154,24 @@ aside {
     height: auto;
 }
 
+/* Content section classes and ID's */
 #contact {
     display: flex;
-    height: 200px;
+    background-color: gray;
 }
 
-@media (max-width:768px) {
+#contact div {
+    flex: 100%;
+    padding: 40px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
+    -webkit-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
+    -moz-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
+}
 
-    aside {
-        font-size: smaller;
-    }
+/* All media queries when page is less than 800px */
+@media (max-width:800px) {
+
     .portrait {
         max-width: 100px;
     }
@@ -185,13 +180,25 @@ aside {
         padding: 40px;
     }
 
+    .header-text {
+        position: absolute;
+        left: 50px;
+        font-size: 30px;
+    
+    }
+
     em {
         writing-mode: horizontal-tb;
     }
 
     .work {
         flex-direction: column;
+        padding: 40px;
     }
-    
+
+    #contact {
+        flex-direction: column;
+        padding: 40px;
+    } 
 
 }
