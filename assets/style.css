@@ -7,13 +7,12 @@ body {
 
 /* Pages main body */
 main {
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 50px;
     font-family: 'Righteous', cursive;
     margin: 100px;
     display: flex;
     flex-direction: column;
-    /* min-height: 300vh; */
 }
 
 /* All images to fit their containers */
@@ -23,24 +22,26 @@ img {
 
 /* Main body about, work, contact titles */
 em {
-    font-size: 40px;
+    font-size: 30px;
     font-style: normal;
     writing-mode: vertical-lr;
     text-orientation: upright;
     text-align: center;
-    color: white;
-    text-shadow: 2px 2px 5px aqua;
+    padding: 10px;
+    color: #585885;
+    text-shadow: 2px 2px 5px #000080;
 }
 
 nav {
     display: flex;
     justify-content: flex-end;
     height: 50px;
+    padding-right: 10px;
 }
 
 /* Navigation menu text */
 nav a {
-    color: rgb(73, 73, 73);
+    color: #7e7e7e;
     margin: 20px;
     text-decoration: none;
     font-size: 20px;
@@ -49,9 +50,10 @@ nav a {
 /* Header element */
 header{
     display: flex;
+    flex-shrink: 2;
     position: relative;
     z-index: 2;
-    min-height: 300px;
+    min-height: 200px;
     opacity: 0.8;
     margin-bottom: 100px;
 }
@@ -60,8 +62,8 @@ header{
 .main {
     display: inline-block;
     flex-wrap: wrap;
-    background-color: gray;
-    
+    background-color: #cacaca;
+    border-radius: 0 0 50px 50px;
 }
 
 /* Photo section classes */
@@ -80,29 +82,31 @@ header{
     border-radius: 60%;
 }
 
-/* The header text postioned central to the banner */
+/* The header text postioned over the banner */
 .header-text {
     position: absolute;
-    top: 90px;
-    left: 300px;
+    flex: 1 1 100%;
+    top: 30px;
+    left: 350px;
     font-size: 50px;
     word-spacing: 2px;
     letter-spacing: 2px;
-    color: gray;
-    text-shadow: 2px 2px 5px aqua;
+    color: #67679a;
+    text-shadow: 2px 2px 5px white;
 
 }
 
 /* About me section classes */
 .about { 
     display: flex;
-    min-height: 300px; 
+    min-height: 300px;
+    padding-right: 45px;
+    padding-bottom: 20px; 
 }
 
 .about-contain {
+    z-index: 4;
     text-align: center;
-    color: white;
-    text-shadow: 2px 2px 5px aqua;
 }
 
 #about-text {
@@ -111,7 +115,7 @@ header{
     padding: 40px;
     font-size: 20px;
     font-style: normal;
-    color:black;
+    color: #7e7e7e;
     border-radius: 50px;
     box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
     -webkit-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
@@ -124,12 +128,13 @@ header{
     display: flex;
     top: 600px;
     min-height: 300px;
+    padding-right: 45px;
 }
 
 .work-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content:center;
     border: white;
     border-radius: 50px;
     box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
@@ -141,37 +146,50 @@ header{
     border-radius: 50px;
 }
 
-#work-imgs {
+.work-content a {
+    text-decoration: none;
+    color: #424242;
+}
+
+#work-img {
     flex: 2 2 100%;
     flex-wrap: wrap;
     padding: 10px;
     height: auto;
+    text-align: center;
 }
 .work-imgs {
-    flex: 1 1 30%;
+    flex: .5 2 30%;
     flex-wrap: wrap;
     padding: 10px;
     height: auto;
+    text-align: center;
 }
 
 /* Content section classes and ID's */
 #contact {
     display: flex;
-    background-color: gray;
+    background-color: #cacaca;
+    color: #424242;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 45px;
+    border-radius: 0 0 50px 50px;
 }
 
 #contact div {
     flex: 100%;
+    flex-wrap: wrap;
     padding: 40px;
     border-radius: 50px;
     box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
     -webkit-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
     -moz-box-shadow: 1px 1px 18px 12px rgba(118,125,125,0.76);
+    text-align: center;
 }
 
 /* All media queries when page is less than 800px */
-@media (max-width:800px) {
-
+@media (max-width:900px) {
     .portrait {
         max-width: 100px;
     }
@@ -179,26 +197,25 @@ header{
         flex-direction: column;
         padding: 40px;
     }
-
     .header-text {
         position: absolute;
         left: 50px;
         font-size: 30px;
     
     }
-
     em {
         writing-mode: horizontal-tb;
     }
-
     .work {
         flex-direction: column;
         padding: 40px;
     }
-
     #contact {
         flex-direction: column;
         padding: 40px;
     } 
+    #contact div, nav a {
+        font-size: smaller;
+    }
 
 }
